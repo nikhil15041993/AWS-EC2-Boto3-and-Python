@@ -20,6 +20,11 @@ print(f'EC2 instance "{instance.id}" has been started')
 
 
 
+
+
+
+
+
 #### STOPING INSTANCE ############
 
 
@@ -38,3 +43,31 @@ print(f'Stopping EC2 instance: {instance.id}')
 instance.wait_until_stopped()
 
 print(f'EC2 instance "{instance.id}" has been stopped')
+
+
+
+
+
+
+
+
+
+
+######  TERMINATE INSTANCE ##############
+
+
+import boto3
+
+AWS_REGION = "us-east-2"
+EC2 = boto3.resource('ec2', region_name=AWS_REGION)
+INSTANCE_ID = 'i-020b3f1914105320d'
+
+instance = EC2.Instance(INSTANCE_ID)
+
+instance.terminate()
+
+print(f'Terminating EC2 instance: {instance.id}')
+    
+instance.wait_until_terminated()
+
+print(f'EC2 instance "{instance.id}" has been terminated')
