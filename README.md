@@ -14,6 +14,16 @@ sudo apt-get install python3-pip
 pip3 install boto3
 ```
 
+## Running a Script
+
+Once the script has been written, save it to a specific location in your system and then follow the steps below to run it:
+
+Open the terminal by searching for it in the dashboard or pressing Ctrl + Alt + T.
+
+Navigate the terminal to the directory where the script is located using the cd command.
+
+Type python SCRIPTNAME.py in the terminal to execute the script.
+
 ```
 
 import boto3
