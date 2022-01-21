@@ -10,7 +10,8 @@ instances = EC2.create_instances(
     MaxCount = 1,
     ImageId=AMI_ID,
     InstanceType='t2.micro',
-    KeyName=KEY_PAIR_NAME
+    KeyName=KEY_PAIR_NAME,
+    SecurityGroupIds=['sg-1f39854x']
     )
 
 for instance in instances:
