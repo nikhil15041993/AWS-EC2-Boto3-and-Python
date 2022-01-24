@@ -21,7 +21,6 @@ METHOD 2
 
 
 import boto3
-import json
 client = boto3.client('ec2')
 Myec2=client.describe_instances()
 
@@ -29,5 +28,6 @@ for pythonins in Myec2['Reservations']:
     for instance in pythonins['Instances']:
 
         print(instance["InstanceId"])
-        print(instance['State']['Name'])
-~                                        
+        print(f'Instance state: {instance["State"]["Name"]}')
+        print(f'Instance AMI: {instance["ImageId"]}')
+                                  
