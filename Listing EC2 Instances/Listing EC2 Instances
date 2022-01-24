@@ -13,3 +13,21 @@ for instance in instances:
     print(f'Instance type: "{instance.instance_type}')
     print(f'Piblic IPv4 address: {instance.public_ip_address}')
     print('-'*60)
+
+
+===============================================================
+METHOD 2
+===============================================================
+
+
+import boto3
+import json
+client = boto3.client('ec2')
+Myec2=client.describe_instances()
+
+for pythonins in Myec2['Reservations']:
+    for instance in pythonins['Instances']:
+
+        print(instance["InstanceId"])
+        print(instance['State']['Name'])
+~                                        
